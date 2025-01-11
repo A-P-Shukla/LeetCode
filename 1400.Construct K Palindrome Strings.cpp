@@ -17,7 +17,7 @@ public:
     }
 };
 
-//Optimized:
+//Optimized 1:
 class Solution {
 public:
     bool canConstruct(string s, int k) {
@@ -29,6 +29,25 @@ public:
         int oddCount = 0;
         for (int count : charCount) {
             if (count % 2 != 0) {
+                oddCount++;
+            }
+        }
+        return oddCount <= k;
+    }
+};
+
+//Optimized 2:
+class Solution {
+public:
+    bool canConstruct(string s, int k) {
+        if (s.length() < k) return false;
+        vector<int> charCount(26, 0);
+        int oddCount = 0;
+        for (char c : s) {
+            charCount[c - 'a']++;
+            if (charCount[c - 'a'] % 2 == 0) {
+                oddCount--;
+            } else {
                 oddCount++;
             }
         }
