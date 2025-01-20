@@ -15,3 +15,19 @@ public:
         return ans;
     }
 };
+
+//Code 2:
+class Solution {
+public:
+    int numPairsDivisibleBy60(vector<int>& time) {
+        int count = 0 ;
+        unordered_map<int,int>mp;
+        for(int &t :time){
+            int rem = t%60;
+            if(rem == 0) count+=mp[0];
+            else count+= mp[60-rem];
+            mp[rem]++;
+        }
+        return count ;
+    }
+};
