@@ -26,3 +26,24 @@ void dfs(const vector<int>& nums, vector<bool>&& used, vector<int>&& path,
     return ans;
   }
 };
+
+//Code 2:
+class Solution {
+public:
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        vector<vector<int>> res{{}};
+        for (int num : nums) {
+            for (int k = res.size(); k > 0; --k) {
+                vector<int> t = res.front();
+                res.erase(res.begin());
+                for (int i = 0; i <= t.size(); ++i) {
+                    vector<int> one = t;
+                    one.insert(one.begin() + i, num);
+                    res.push_back(one);
+                    if (i < t.size() && num == t[i]) break;
+                }
+            }
+        }
+        return res;
+    }
+};
