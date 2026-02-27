@@ -65,4 +65,3 @@ public:
         return dist[0];
     }
 };
----CODE_END---
