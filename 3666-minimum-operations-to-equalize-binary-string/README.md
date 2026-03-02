@@ -1,4 +1,4 @@
-# 3983. Minimum Operations to Equalize Binary String
+# 3666. Minimum Operations to Equalize Binary String
 
 Property | Value
 --- | ---
