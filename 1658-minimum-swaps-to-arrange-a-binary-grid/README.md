@@ -1,4 +1,4 @@
-# 1533. Minimum Swaps to Arrange a Binary Grid
+# 1536. Minimum Swaps to Arrange a Binary Grid
 
 Property | Value
 --- | ---
