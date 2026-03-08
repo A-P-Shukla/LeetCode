@@ -24,5 +24,3 @@ public:
         return result;
     }
 };
-
----CODE_END---
