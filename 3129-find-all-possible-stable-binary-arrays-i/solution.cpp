@@ -8,7 +8,7 @@ private:
     long long MOD = 1e9 + 7;
 
 public:
-    int countStableArrays(int zero, int one, int limit) {
+    int numberOfStableArrays(int zero, int one, int limit) {
         // DP[z][o][0]: Number of stable arrays using exactly z zeros and o ones, ending with 0.
         // DP[z][o][1]: Number of stable arrays using exactly z zeros and o ones, ending with 1.
         // The dimensions are (zero + 1) x (one + 1) x 2.
