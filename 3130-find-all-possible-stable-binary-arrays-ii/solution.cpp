@@ -58,4 +58,3 @@ public:
         return (dp[zero][one][0] + dp[zero][one][1]) % MOD;
     }
 };
----CODE_END---
