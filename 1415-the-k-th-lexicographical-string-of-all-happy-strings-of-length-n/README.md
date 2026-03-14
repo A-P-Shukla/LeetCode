@@ -4,7 +4,7 @@ Property | Value
 --- | ---
 Difficulty | Medium
 Topics | String, Backtracking
-Date | February 19, 2025
+Date | March 14 , 2026
 LeetCode Link | [https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/](https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/)
 
 ## Intuition
