@@ -3,7 +3,7 @@ name: Update Profile README
 on:
   push:
     branches:
-      - main  # Confirm if your default branch is main or master
+      - main 
 
 jobs:
   update-readme:
@@ -12,7 +12,6 @@ jobs:
       - name: Get latest commit message
         id: commit
         run: |
-          # Captures the subject line of the last commit
           echo "msg=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
 
       - name: Checkout Profile Repo
@@ -20,20 +19,22 @@ jobs:
         with:
           repository: A-P-Shukla/A-P-Shukla
           token: ${{ secrets.PROFILE_UPDATE_TOKEN }}
-          path: README.md
+          # Changed this from README.md to profile-repo
+          path: profile-repo
 
       - name: Update README content
         run: |
           cd profile-repo
           COMMIT_MSG="${{ steps.commit.outputs.msg }}"
           
-          # This awk script replaces everything between the markers
+          # Restored the markers in the awk script below
           awk -v msg="$COMMIT_MSG" '
           // {
             print $0
             print "#### 🧩 Latest LeetCode Solve"
             print "> `" msg "`"
             skip=1
+            next
           }
           // {
             skip=0
