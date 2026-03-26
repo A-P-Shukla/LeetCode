@@ -20,7 +20,7 @@ jobs:
         with:
           repository: A-P-Shukla/A-P-Shukla
           token: ${{ secrets.PROFILE_UPDATE_TOKEN }}
-          path: profile-repo
+          path: README.md
 
       - name: Update README content
         run: |
