@@ -4,7 +4,7 @@ Property | Value
 --- | ---
 Difficulty | Medium
 Topics | Hash Table, String, Sorting, Counting
-Date | March 30, 2024
+Date | March 30, 2026
 LeetCode Link | [https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/)
 
 ### Intuition
