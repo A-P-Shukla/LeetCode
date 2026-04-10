@@ -4,7 +4,7 @@
 | --- | --- |
 | Difficulty | Easy |
 | Topics | Array, Hash Table |
-| Date | May 21, 2024 |
+| Date | April 10, 2026 |
 | LeetCode Link | [Minimum Distance Between Three Equal Elements I](https://leetcode.com/problems/minimum-distance-between-three-equal-elements-i/) |
 
 ## Intuition
