@@ -1,4 +1,4 @@
-##3741. Minimum Distance Between Three Equal Elements II
+## 3741. Minimum Distance Between Three Equal Elements II
 
 | Property | Value |
 | --- | --- |
