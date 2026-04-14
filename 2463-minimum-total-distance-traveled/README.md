@@ -5,7 +5,7 @@ Property | Value
 --- | ---
 Difficulty | Hard
 Topics | Array, Dynamic Programming, Sorting
-Date | October 31, 2024
+Date | April 14, 2026
 LeetCode Link | [Minimum Total Distance Traveled](https://leetcode.com/problems/minimum-total-distance-traveled/)
 
 ### Intuition
