@@ -4,7 +4,7 @@
 | --- | --- |
 | Difficulty | Medium |
 | Topics | Array, Hash Table, Prefix Sum |
-| Date | April 23, 2024 |
+| Date | April 23, 2026 |
 | LeetCode Link | [https://leetcode.com/problems/sum-of-distances/](https://leetcode.com/problems/sum-of-distances/) |
 
 ## Intuition
