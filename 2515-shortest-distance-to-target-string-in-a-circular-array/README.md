@@ -4,7 +4,7 @@ Property | Value
 --- | ---
 Difficulty | Easy
 Topics | Array, String
-Date | April 23, 2026
+Date | April 15, 2026
 LeetCode Link | [https://leetcode.com/problems/shortest-distance-to-target-string-in-a-circular-array/](https://leetcode.com/problems/shortest-distance-to-target-string-in-a-circular-array/)
 
 ## Intuition
