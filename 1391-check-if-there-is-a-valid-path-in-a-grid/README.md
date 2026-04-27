@@ -4,7 +4,7 @@
 | --- | --- |
 | Difficulty | Medium |
 | Topics | Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix |
-| Date | May 23, 2024 |
+| Date | April 27, 2026 |
 | LeetCode Link | [https://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid/](https://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid/) |
 
 ## Intuition
