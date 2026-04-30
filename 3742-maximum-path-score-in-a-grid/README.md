@@ -4,7 +4,7 @@ Property | Value
 --- | ---
 Difficulty | Medium
 Topics | Array, Dynamic Programming, Matrix
-Date | May 22, 2024
+Date | April 30, 2026
 LeetCode Link | [https://leetcode.com/problems/maximum-path-score-in-a-grid/](https://leetcode.com/problems/maximum-path-score-in-a-grid/)
 
 ## Intuition
