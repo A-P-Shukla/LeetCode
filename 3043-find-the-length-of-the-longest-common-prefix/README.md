@@ -1,11 +1,11 @@
 # 3043. Find the Length of the Longest Common Prefix
 
-### Property | Value
---- | ---
-Difficulty | Medium
-Topics | Array, Hash Table, String, Trie
-Date | May 21, 2026
-LeetCode Link | [Find the Length of the Longest Common Prefix](https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/)
+| Property | Value |
+|---|---|
+| Difficulty | Medium |
+| Topics | Array, Hash Table, String, Trie |
+| Date | May 21, 2026 |
+| LeetCode Link | [Find the Length of the Longest Common Prefix](https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/) |
 
 ---
 
