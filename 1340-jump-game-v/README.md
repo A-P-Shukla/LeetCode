@@ -1,11 +1,11 @@
 # 1340. Jump Game V
 
-### Property | Value
---- | ---
-Difficulty | Hard
-Topics | Array, Dynamic Programming, Sorting
-Date | May 24, 2026
-LeetCode Link | [Jump Game V](https://leetcode.com/problems/jump-game-v/)
+| Property | Value |
+|---|---|
+| Difficulty | Hard |
+| Topics | Array, Dynamic Programming, Sorting |
+| Date | May 24, 2026 |
+| LeetCode Link | [Jump Game V](https://leetcode.com/problems/jump-game-v/) |
 
 ## Intuition
 
