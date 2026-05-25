@@ -1,11 +1,11 @@
 # 1871. Jump Game VII
 
-### Property | Value
---- | ---
-Difficulty | Medium
-Topics | String, Dynamic Programming, Sliding Window, Prefix Sum
-Date | May 25, 2026
-LeetCode Link | [Jump Game VII](https://leetcode.com/problems/jump-game-vii/)
+| Property | Value |
+| --- | --- |
+| Difficulty | Medium |
+| Topics | String, Dynamic Programming, Sliding Window, Prefix Sum |
+| Date | May 25, 2026 |
+| LeetCode Link | [Jump Game VII](https://leetcode.com/problems/jump-game-vii/) |
 
 ---
 
