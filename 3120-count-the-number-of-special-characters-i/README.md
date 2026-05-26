@@ -1,6 +1,5 @@
 # 3120. Count the Number of Special Characters I
 
-### Metadata Table
 Property | Value
 --- | ---
 Difficulty | Easy
