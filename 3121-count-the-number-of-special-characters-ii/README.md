@@ -18,8 +18,15 @@ Let's translate the second requirement into index comparisons:
 - If *every* lowercase occurrence of $c$ is before the *first* uppercase occurrence, then the **last** (latest) lowercase occurrence of $c$ must be before the **first** (earliest) uppercase occurrence of $c$.
 - Conversely, if the last lowercase occurrence is before the first uppercase occurrence, then all preceding lowercase occurrences are also guaranteed to be before the first uppercase occurrence.
 
-Thus, the condition for a character $c$ to be special is:
-$$\text{last\_lower}[c] \neq -1 \quad \text{and} \quad \text{first\_upper}[c] \neq -1 \quad \text{and} \quad \text{last\_lower}[c] < \text{first\_upper}[c]$$
+Thus, the condition for a character \( c \) to be special is:
+
+\[
+\text{last\_lower}[c] \neq -1
+\quad \text{and} \quad
+\text{first\_upper}[c] \neq -1
+\quad \text{and} \quad
+\text{last\_lower}[c] < \text{first\_upper}[c]
+\]
 
 We can solve this problem in a single pass over the string by keeping track of:
 - The last occurrence index of each lowercase letter.
