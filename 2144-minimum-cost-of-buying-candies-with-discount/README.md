@@ -1,11 +1,11 @@
 # 2144. Minimum Cost of Buying Candies With Discount
 
-### Property | Value
---- | ---
-Difficulty | Easy
-Topics | Array, Greedy, Sorting
-Date | June 1, 2026
-LeetCode Link | [Minimum Cost of Buying Candies With Discount](https://leetcode.com/problems/minimum-cost-of-buying-candies-with-discount/)
+| Property | Value |
+|----------|-------|
+| Difficulty | Easy |
+| Topics | Array, Greedy, Sorting |
+| Date | June 1, 2026 |
+| LeetCode Link | [Minimum Cost of Buying Candies With Discount](https://leetcode.com/problems/minimum-cost-of-buying-candies-with-discount/) |
 
 ---
 
