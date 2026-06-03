@@ -1,11 +1,11 @@
 # 3635. Earliest Finish Time for Land and Water Rides II
 
-### Property | Value
---- | ---
-Difficulty | Medium
-Topics | Array, Greedy
-Date | June 3, 2026
-LeetCode Link | [Earliest Finish Time for Land and Water Rides II](https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-ii/)
+| Property | Value |
+|----------|-------|
+| Difficulty | Medium |
+| Topics | Array, Greedy |
+| Date | June 3, 2026 |
+| LeetCode Link | [Earliest Finish Time for Land and Water Rides II](https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-ii/) |
 
 ---
 
