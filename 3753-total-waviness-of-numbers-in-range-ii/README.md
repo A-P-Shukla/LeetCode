@@ -1,11 +1,11 @@
 # 3753. Total Waviness of Numbers in Range II
 
-### Property | Value
---- | ---
-Difficulty | Hard
-Topics | Math, Dynamic Programming
-Date | June 5, 2026
-LeetCode Link | [Total Waviness of Numbers in Range II](https://leetcode.com/problems/total-waviness-of-numbers-in-range-ii/)
+| Property | Value |
+| --- | --- |
+| Difficulty | Hard |
+| Topics | Dynamic Programming, Math |
+| Date | June 5, 2026 |
+| LeetCode Link | [Total Waviness of Numbers in Range II](https://leetcode.com/problems/total-waviness-of-numbers-in-range-ii/) |
 
 ---
 
