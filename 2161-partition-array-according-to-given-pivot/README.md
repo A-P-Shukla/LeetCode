@@ -1,11 +1,11 @@
 # 2161. Partition Array According to Given Pivot
 
-### Property | Value
---- | ---
-Difficulty | Medium
-Topics | Array, Two Pointers, Simulation
-Date | June 8, 2026
-LeetCode Link | [Partition Array According to Given Pivot](https://leetcode.com/problems/partition-array-according-to-given-pivot/)
+| Property | Value |
+|----------|-------|
+| Difficulty | Medium |
+| Topics | Array, Two Pointers, Simulation |
+| Date | June 8, 2026 |
+| LeetCode Link | [Partition Array According to Given Pivot](https://leetcode.com/problems/partition-array-according-to-given-pivot/) |
 
 ---
 
