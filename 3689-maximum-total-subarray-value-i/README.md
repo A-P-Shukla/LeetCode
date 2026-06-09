@@ -1,11 +1,11 @@
 # 3689. Maximum Total Subarray Value I
 
-### Property | Value
---- | ---
-Difficulty | Medium
-Topics | Array, Greedy
-Date | June 9, 2026
-LeetCode Link | [Maximum Total Subarray Value I](https://leetcode.com/problems/maximum-total-subarray-value-i/)
+| Property      | Value                                                                                           |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| Difficulty    | Medium                                                                                          |
+| Topics        | Array, Greedy                                                                                   |
+| Date          | June 9, 2026                                                                                    |
+| LeetCode Link | [Maximum Total Subarray Value I](https://leetcode.com/problems/maximum-total-subarray-value-i/) |
 
 ## Intuition
 
