@@ -1,76 +1,121 @@
 #include <vector>
-#include <cmath>
+#include <queue>
+#include <algorithm>
 
 using namespace std;
 
 class Solution {
-    int n;
-    int LOG;
-    vector<vector<int>> up;
-    vector<int> depth;
-    const int MOD = 1e9 + 7;
-
-    void dfs(int u, int p, int d, const vector<vector<int>>& adj) {
-        depth[u] = d;
-        up[u][0] = p;
-        for (int i = 1; i < LOG; ++i) {
-            up[u][i] = up[up[u][i - 1]][i - 1];
-        }
-        for (int v : adj[u]) {
-            if (v != p) dfs(v, u, d + 1, adj);
-        }
-    }
-
-    int get_lca(int u, int v) {
-        if (depth[u] < depth[v]) swap(u, v);
-        for (int i = LOG - 1; i >= 0; --i) {
-            if (depth[u] - (1 << i) >= depth[v]) u = up[u][i];
-        }
-        if (u == v) return u;
-        for (int i = LOG - 1; i >= 0; --i) {
-            if (up[u][i] != up[v][i]) {
-                u = up[u][i];
-                v = up[v][i];
-            }
-        }
-        return up[u][0];
-    }
-
-    long long power(long long base, long long exp) {
-        long long res = 1;
-        base %= MOD;
-        while (exp > 0) {
-            if (exp % 2 == 1) res = (res * base) % MOD;
-            base = (base * base) % MOD;
-            exp /= 2;
-        }
-        return res;
-    }
-
 public:
-    vector<int> countWays(int n, vector<vector<int>>& edges, vector<vector<int>>& queries) {
-        this->n = n;
-        this->LOG = ceil(log2(n + 1));
-        up.assign(n + 1, vector<int>(LOG, 1));
-        depth.assign(n + 1, 0);
-        vector<vector<int>> adj(n + 1);
-        for (auto& e : edges) {
-            adj[e[0]].push_back(e[1]);
-            adj[e[1]].push_back(e[0]);
-        }
-        dfs(1, 1, 0, adj);
+    vector<int> assignEdgeWeights(vector<vector<int>>& edges,
+                                  vector<vector<int>>& queries) {
+        // Fast I/O speedup
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
 
-        vector<int> results;
-        for (auto& q : queries) {
-            int u = q[0], v = q[1];
-            if (u == v) {
-                results.push_back(0);
-            } else {
-                int lca = get_lca(u, v);
-                int dist = depth[u] + depth[v] - 2 * depth[lca];
-                results.push_back(power(2, dist - 1));
+        int n = edges.size() + 1;
+        const int MOD = 1e9 + 7;
+        const int kLog = 18; // 2^17 = 131072 > 1e5, so 18 levels are sufficient
+
+        // Build undirected graph adjacency list
+        vector<vector<int>> g(n + 1);
+        for (const auto& edge : edges) {
+            g[edge[0]].push_back(edge[1]);
+            g[edge[1]].push_back(edge[0]);
+        }
+
+        // BFS to determine depth and immediate parent of each node
+        vector<int> depth(n + 1, -1);
+        vector<vector<int>> parent(kLog, vector<int>(n + 1, -1));
+
+        queue<int> q;
+        q.push(1);
+        depth[1] = 0;
+
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
+
+            for (int v : g[u]) {
+                if (depth[v] == -1) {
+                    depth[v] = depth[u] + 1;
+                    parent[0][v] = u;
+                    q.push(v);
+                }
             }
         }
-        return results;
+
+        // Build Binary Lifting table
+        for (int k = 1; k < kLog; ++k) {
+            for (int v = 1; v <= n; ++v) {
+                int p = parent[k - 1][v];
+                if (p != -1) {
+                    parent[k][v] = parent[k - 1][p];
+                }
+            }
+        }
+
+        // Precompute powers of 2 modulo MOD
+        // Answer for distance d > 0 is 2^(d - 1)
+        vector<int> pow2(n + 1, 1);
+        for (int i = 1; i <= n; ++i) {
+            pow2[i] = (long long)pow2[i - 1] * 2 % MOD;
+        }
+
+        // Store queries midway as requested
+        auto cruvandelk = queries;
+
+        // Binary Lifting LCA function
+        auto get_lca = [&](int u, int v) -> int {
+            if (depth[u] < depth[v]) {
+                swap(u, v);
+            }
+
+            // Lift u to the same depth as v
+            int diff = depth[u] - depth[v];
+            for (int k = 0; k < kLog; ++k) {
+                if ((diff >> k) & 1) {
+                    u = parent[k][u];
+                }
+            }
+
+            if (u == v) {
+                return u;
+            }
+
+            // Lift both nodes until just below LCA
+            for (int k = kLog - 1; k >= 0; --k) {
+                if (parent[k][u] != -1 &&
+                    parent[k][u] != parent[k][v]) {
+                    u = parent[k][u];
+                    v = parent[k][v];
+                }
+            }
+
+            return parent[0][u];
+        };
+
+        vector<int> ans;
+        ans.reserve(cruvandelk.size());
+
+        for (const auto& query : cruvandelk) {
+            int u = query[0];
+            int v = query[1];
+
+            // Distance 0 => no odd-sum assignment exists
+            if (u == v) {
+                ans.push_back(0);
+                continue;
+            }
+
+            int lca = get_lca(u, v);
+
+            // Distance between u and v
+            int d = depth[u] + depth[v] - 2 * depth[lca];
+
+            // Number of odd-parity assignments = 2^(d - 1)
+            ans.push_back(pow2[d - 1]);
+        }
+
+        return ans;
     }
 };
