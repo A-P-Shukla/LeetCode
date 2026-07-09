@@ -1,33 +1,25 @@
+mx = 10**5 + 1
+mod = 10**9 + 7
+pow10 = [1] * mx
+for i in range(1, mx):
+    pow10[i] = pow10[i - 1] * 10 % mod
+
+
 class Solution:
     def sumAndMultiply(self, s: str, queries: List[List[int]]) -> List[int]:
         n = len(s)
-        mod = 10 ** 9 + 7
-        prev_sum = [0] * (n + 1)
-        prev_cnt = [0] * (n + 1)
-        prev_val = [0] * (n + 1)
+        sum_d = [0] * (n + 1)
+        cnt_n0 = [0] * (n + 1)
+        p = [0] * (n + 1)
+        for i, d in enumerate(map(int, s), 1):
+            sum_d[i] = sum_d[i - 1] + d
+            cnt_n0[i] = cnt_n0[i - 1] + int(d > 0)
+            p[i] = (p[i - 1] * 10 + d) % mod if d else p[i - 1]
 
-        cur_sum = 0
-        cur_cnt = 0
-        cur_val = 0
-        for i in range(n):
-            d = int(s[i])
-            if d != 0:
-                cur_sum += d
-                cur_cnt += 1
-                inv_pow = pow(10, -cur_cnt, mod)
-                cur_val = (cur_val + d * inv_pow) % mod
-            prev_sum[i + 1] = cur_sum
-            prev_cnt[i + 1] = cur_cnt
-            prev_val[i + 1] = cur_val
-        res = []
+        ans = []
         for l, r in queries:
-            total = prev_sum[r + 1] - prev_sum[l]
-            if total <= 0:
-                res.append(0)
-                continue
-            sigma = (prev_val[r + 1] - prev_val[l]) % mod
-            num_0 = pow(10, prev_cnt[r + 1], mod)
-            x = (num_0 * sigma) % mod
-            res.append((x * total) % mod)
-
-        return res
+            n0 = cnt_n0[r + 1] - cnt_n0[l]
+            sd = sum_d[r + 1] - sum_d[l]
+            x = p[r + 1] - p[l] * pow10[n0] % mod
+            ans.append(x * sd % mod)
+        return ans
