@@ -11,8 +11,8 @@
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
-        ListNode* dummy = new ListNode(-1);
-        ListNode* ans = dummy;
+        ListNode dummy(-1);
+        ListNode* ans = &dummy;
         ListNode* curr = head->next;
 
         while(curr != nullptr){
@@ -24,11 +24,11 @@ public:
 
             if(sum != 0){
                 ListNode* sumNode = new ListNode(sum);
-                dummy->next = sumNode;
-                dummy = dummy->next;
+                ans->next = sumNode;
+                ans = ans->next;
             }
             curr = curr->next;
         }
-        return ans->next;
+        return dummy.next;
     }
 };
