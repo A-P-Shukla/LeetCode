@@ -22,11 +22,10 @@ public:
                 curr = curr->next;
             }
 
-            if(sum != 0){
-                ListNode* sumNode = new ListNode(sum);
-                ans->next = sumNode;
-                ans = ans->next;
-            }
+            ListNode* sumNode = new ListNode(sum);
+            ans->next = sumNode;
+            ans = ans->next;
+            
             curr = curr->next;
         }
         return dummy.next;
