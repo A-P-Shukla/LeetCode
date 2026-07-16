@@ -13,7 +13,7 @@ public:
     ListNode* mergeNodes(ListNode* head) {
         ListNode* dummy = new ListNode(-1);
         ListNode* ans = dummy;
-        ListNode* curr = head;
+        ListNode* curr = head->next;
 
         while(curr != nullptr){
             int sum = 0;
