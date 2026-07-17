@@ -15,8 +15,7 @@ public:
         ListNode* ans = curr;
 
         while(curr != nullptr && curr->next != nullptr){
-            ListNode* temp = new ListNode(gcd(curr->val,  curr->next->val));
-            temp->next = curr->next;
+            ListNode* temp = new ListNode(gcd(curr->val,  curr->next->val), curr->next);
             curr->next = temp;
             curr = temp->next;
         }
