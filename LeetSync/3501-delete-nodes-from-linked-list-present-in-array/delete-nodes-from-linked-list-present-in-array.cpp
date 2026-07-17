@@ -26,8 +26,9 @@ public:
                 dummy = dummy->next;
             }
             curr = curr->next;
+            dummy->next = nullptr;
         }
-        dummy->next = nullptr;
+        
         return ans->next;
     }
 };
