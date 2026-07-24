@@ -4,17 +4,20 @@ public:
         int count = 0;
         int n = grid.size();
 
-        for(int r = 0; r < n; r++){
-            for(int c = 0; c < n; c++){
-                bool isEqual = true;
-                for(int i = 0; i < n; i++){
-                    if(grid[r][i] != grid[i][c]){
-                        isEqual = false;
-                        break;
-                    }
-                }
-                count += isEqual;
+        map<vector<int>, int> mp;
+
+        for(int row = 0; row < n; row++){
+            mp[grid[row]]++;
+        }
+
+        for(int c = 0; c < n; c++){
+            vector<int> temp;
+
+            for(int r = 0; r < n; r++){
+                temp.push_back(grid[r][c]);
             }
+
+            count += mp[temp];
         }
 
         return count;
