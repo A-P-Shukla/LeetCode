@@ -4,7 +4,7 @@ Property | Value
 --- | ---
 Difficulty | Medium
 Topics | Array, Math, Greedy, Game Theory
-Date | May 21, 2024
+Date | August 16, 2026
 LeetCode Link | [https://leetcode.com/problems/stone-game-ix/](https://leetcode.com/problems/stone-game-ix/)
 
 ## Intuition
