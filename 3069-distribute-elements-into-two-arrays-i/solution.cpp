@@ -1,0 +1,23 @@
+#include <vector>
+
+class Solution {
+public:
+    std::vector<int> resultArray(std::vector<int>& nums) {
+        // Initialize arr1 and arr2 with the first two elements
+        std::vector<int> arr1 = {nums[0]};
+        std::vector<int> arr2 = {nums[1]};
+        
+        // Process the remaining elements based on given conditions
+        for (size_t i = 2; i < nums.size(); ++i) {
+            if (arr1.back() > arr2.back()) {
+                arr1.push_back(nums[i]);
+            } else {
+                arr2.push_back(nums[i]);
+            }
+        }
+        
+        // Concatenate arr2 to arr1
+        arr1.insert(arr1.end(), arr2.begin(), arr2.end());
+        return arr1;
+    }
+};
