@@ -9,7 +9,7 @@ public:
 
         int count = 0;
 
-        for(int num = 100; num < 999; num += 2){
+        for(int num = 100; num <= 998; num += 2){
             int hundred = num/100;
             int ten = (num / 10) % 10;
             int unit = num % 10;
