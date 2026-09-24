@@ -1,20 +1,21 @@
 class Solution {
-public:
-    int smallestIndex(vector<int>& nums) {
-        int n = nums.size();
+private:
+    int getDigitSum(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
 
-        for(int i = 0; i < n; i++){
-            int sum = 0;
-            int num = nums[i];
-            while(num != 0){
-                sum += num % 10;
-                num /= 10;
-            }
-            if(sum == i){
+public:
+    int smallestIndex(std::vector<int>& nums) {
+        for (int i = 0; i < static_cast<int>(nums.size()); ++i) {
+            if (getDigitSum(nums[i]) == i) {
                 return i;
             }
         }
-
         return -1;
     }
 };
